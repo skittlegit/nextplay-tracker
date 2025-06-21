@@ -79,3 +79,29 @@ if not df.empty:
 else:
     st.info("No data yet. Use the sidebar to add player stats.")
 
+# 🎯 Drill Recommendation Engine
+st.subheader("🧠 Recommended Drills")
+
+# Get last record for selected player
+last_entry = player_df.sort_values(by="Date").iloc[-1]
+
+# Map stat to drill
+drill_map = {
+    "Sprint": "🚀 Sprint Ladder Drill: 3 sets of 20m bursts with 1 min rest",
+    "Juggles": "⚽ Juggling Pyramid: Start with 10, add 5 every round",
+    "Dribble": "🕹️ Cone Weave Drill: Tight dribble through cones in zig-zag",
+    "Goals": "🥅 Target Shooting: 20 shots, 10 with left, 10 with right",
+    "Assists": "🎯 One-Touch Passing with partner or wall"
+}
+
+# Get stat with lowest performance (relative to others)
+key_stats = ["Sprint", "Juggles", "Dribble", "Goals", "Assists"]
+lowest_stat = min(key_stats, key=lambda stat: last_entry[stat])
+
+st.markdown(f"""
+**👤 Player:** `{last_entry['Player']}`  
+**📅 Last Session:** `{last_entry['Date']}`  
+**📉 Weakest Area:** `{lowest_stat}`  
+**🔥 Recommended Drill:**  
+> {drill_map[lowest_stat]}
+""")
