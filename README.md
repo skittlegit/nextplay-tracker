@@ -1,14 +1,20 @@
-# NextPlay: Project Mbappé Tracker 🏃‍♂️⚽
+# ⚽ NextPlay: Project Mbappé Tracker
 
-A smart player performance tracking tool to help young footballers level up like Mbappé.
+NextPlay is a personal football training tracker designed for young athletes to monitor progress and reach pro-level skills like Mbappé.
 
-### Features:
-- Track sprint, juggling, dribbling, goals, and assists
-- Visualize player improvement over time
-- Recommend drills based on weaknesses (coming soon)
-- Export weekly reports
+## Features
+- Log daily training data: sprint, juggling, dribbling, goals, assists
+- Interactive graphs to visualize improvement
+- Clean UI with Streamlit
+- Offline & web deployable
 
-### Built With:
+## Tech Stack
+- Python 🐍
 - Streamlit
-- Python
 - Pandas
+- Plotly
+
+## Usage
+1. Clone the repo
+2. Run `streamlit run app.py`
+3. Enter stats in sidebar and track your journey 🚀
